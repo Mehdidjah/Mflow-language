@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 26% 6%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 26% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 26% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 26% 6%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 220 26% 14%;
+    --muted-foreground: 180 20% 60%;
+
+    --accent: 180 100% 45%;
+    --accent-foreground: 220 26% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 220 26% 18%;
+    --input: 220 26% 18%;
+    --ring: 180 100% 50%;
+
+    --code-bg: 220 26% 10%;
+    --code-border: 220 26% 20%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(270 60% 55%));
+    --gradient-glow: linear-gradient(180deg, hsla(180 100% 50% / 0.1), transparent);
+    
+    --shadow-glow: 0 0 40px hsla(180 100% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsla(0 0% 0% / 0.4);
+
+    --radius: 0.75rem;
+
+    --font-mono: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+
+  .code-block {
+    @apply bg-code-bg border border-code-border rounded-lg p-4;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsla(180 100% 50% / 0.5);
+  }
+}
